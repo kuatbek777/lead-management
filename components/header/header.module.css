@@ -1,0 +1,64 @@
+.header {
+  background: #e0f0bc;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.text {
+  font-size: 80px;
+  font-weight: 800;
+  text-transform: capitalize;
+  padding-right: 20%;
+}
+
+.logo {
+  margin-left: -300px;
+}
+
+.adminPanelButton {
+  position: absolute;
+  top: 10;
+  right: 10;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px 40px;
+  font-size: 16px;
+}
+
+.adminPanelButton:hover {
+  background: #0000000f;
+}
+
+@media only screen and (max-width: 1400px) {
+  .header {
+    height: 300px;
+  }
+  .text {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 200px;
+  }
+  .logo {
+    display: none;
+  }
+  .text {
+    font-size: 28px;
+    padding-right: 0px;
+  }
+}

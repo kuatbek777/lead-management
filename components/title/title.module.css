@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 12px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.description {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}

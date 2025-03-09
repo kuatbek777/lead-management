@@ -1,0 +1,89 @@
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tableContainer {
+  border-radius: 12px;
+  border: 1px solid #eee;
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+
+  th,
+  td {
+    text-align: left;
+    font-size: 16px;
+    height: 80px;
+    padding: 0px 12px;
+  }
+
+  th {
+    color: #aaa;
+    cursor: pointer;
+    font-weight: 300;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover {
+    background-color: #f3f3f3;
+  }
+
+  .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    button {
+      padding: 4px;
+      border-radius: 3px;
+      border: none;
+      background: lightslategray;
+      color: white;
+      cursor: pointer;
+      width: 110px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+  align-items: center;
+}
+
+.pagination button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #aaa;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.pagination .active {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-weight: bold;
+  color: #000;
+}
