@@ -14,14 +14,14 @@
   gap: 10px;
   width: 300px;
 
-  input {
+  .formInput {
     font-size: 16px;
     padding: 12px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }
 
-  button {
+  .formButton {
     height: 50px;
     margin: 20px 0px;
     font-size: 16px;
@@ -32,7 +32,7 @@
     cursor: pointer;
   }
 
-  button:hover {
+  .formButton:hover {
     opacity: 0.85;
   }
 }

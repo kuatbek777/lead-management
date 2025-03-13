@@ -31,14 +31,18 @@ export default function Login() {
           placeholder="Username"
           required
           onChange={(e) => setUsername(e.target.value)}
+          className={styles.formInput}
         />
         <input
           type="password"
           placeholder="Password"
           required
           onChange={(e) => setPassword(e.target.value)}
+          className={styles.formInput}
         />
-        <button type="submit">Login</button>
+        <button type="submit" className={styles.formButton}>
+          Login
+        </button>
       </form>
     </div>
   );

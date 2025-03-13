@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLeads, updateLeadStatus } from "../../store/leadSlice";
 
 const itemsPerPage = 8;
+const tableHeadClassname = `${styles.tableCell} ${styles.tableHeader}`;
 
 const LeadTable = () => {
   const dispatch = useDispatch();
@@ -59,52 +60,78 @@ const LeadTable = () => {
       <div className={styles.tableContainer}>
         <table className={styles.table}>
           <thead>
-            <tr>
-              <th onClick={() => handleSort("firstName")}>
+            <tr className={styles.tableRow}>
+              <th
+                onClick={() => handleSort("firstName")}
+                className={tableHeadClassname}
+              >
                 Name {sortConfig.key === "firstName" ? sortingLabel : ""}
               </th>
-              <th onClick={() => handleSort("email")}>
+              <th
+                onClick={() => handleSort("email")}
+                className={tableHeadClassname}
+              >
                 Email {sortConfig.key === "email" ? sortingLabel : ""}
               </th>
-              <th onClick={() => handleSort("linkedin")}>
+              <th
+                onClick={() => handleSort("linkedin")}
+                className={tableHeadClassname}
+              >
                 LinkedIn {sortConfig.key === "linkedin" ? sortingLabel : ""}
               </th>
-              <th onClick={() => handleSort("visas")}>
+              <th
+                onClick={() => handleSort("visas")}
+                className={tableHeadClassname}
+              >
                 Visas {sortConfig.key === "visas" ? sortingLabel : ""}
               </th>
-              <th onClick={() => handleSort("status")}>
+              <th
+                onClick={() => handleSort("status")}
+                className={tableHeadClassname}
+              >
                 Status {sortConfig.key === "status" ? sortingLabel : ""}
               </th>
-              <th onClick={() => handleSort("additionalInfo")}>
+              <th
+                onClick={() => handleSort("additionalInfo")}
+                className={tableHeadClassname}
+              >
                 Additional Info{" "}
                 {sortConfig.key === "additionalInfo" ? sortingLabel : ""}
               </th>
-              <th onClick={() => handleSort("submittedAt")}>
+              <th
+                onClick={() => handleSort("submittedAt")}
+                className={tableHeadClassname}
+              >
                 Submitted {sortConfig.key === "submittedAt" ? sortingLabel : ""}
               </th>
             </tr>
           </thead>
           <tbody>
             {paginatedData.map((lead, index) => (
-              <tr key={index}>
-                <td>
+              <tr key={index} className={styles.tableRow}>
+                <td className={styles.tableCell}>
                   {lead.firstName} {lead.lastName}
                 </td>
-                <td>{lead.email}</td>
-                <td>{lead.linkedin}</td>
-                <td>{lead.visas}</td>
-                <td>
+                <td className={styles.tableCell}>{lead.email}</td>
+                <td className={styles.tableCell}>{lead.linkedin}</td>
+                <td className={styles.tableCell}>{lead.visas}</td>
+                <td className={styles.tableCell}>
                   <div className={styles.status}>
                     {lead.status}
                     {lead.status === "Pending" && (
-                      <button onClick={() => handleUpdateStatus(lead.id)}>
+                      <button
+                        onClick={() => handleUpdateStatus(lead.id)}
+                        className={styles.updateButton}
+                      >
                         Update Status
                       </button>
                     )}
                   </div>
                 </td>
-                <td>{lead.additionalInfo}</td>
-                <td>{new Date(lead.submittedAt).toLocaleString()}</td>
+                <td className={styles.tableCell}>{lead.additionalInfo}</td>
+                <td className={styles.tableCell}>
+                  {new Date(lead.submittedAt).toLocaleString()}
+                </td>
               </tr>
             ))}
           </tbody>
